@@ -1,5 +1,6 @@
 package com.example.studentcourse.service.impl;
 
+import com.example.studentcourse.entity.Course;
 import com.example.studentcourse.entity.Student;
 import com.example.studentcourse.repository.StudentRepo;
 import com.example.studentcourse.service.StudentService;
@@ -42,6 +43,17 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> initializeSampleStudents() {
         studentRepository.initializeSampleStudents();
         return studentRepository.getAllStudents();
+    }
+
+    @Override
+    public List<Student> getStudentsByMajor(String major) {
+        return studentRepository.getStudentsByMajor(major);
+    }
+
+    @Override
+    public List<Course> getCoursesByStudentId(int id) {
+        List<Course> courses = studentRepository.getCoursesByStudentId(id);
+        return courses;
     }
 }
 

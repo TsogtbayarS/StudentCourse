@@ -1,5 +1,6 @@
 package com.example.studentcourse.service;
 
+import com.example.studentcourse.entity.Course;
 import com.example.studentcourse.entity.Student;
 
 import java.util.List;
@@ -11,4 +12,7 @@ public interface StudentService {
     Student updateStudent(int studentId, Student student);
     Student deleteStudent(int studentId);
     List<Student> initializeSampleStudents();
+
+    List<Student> getStudentsByMajor(String major);
+    List<Course> getCoursesByStudentId(int id);
 }
